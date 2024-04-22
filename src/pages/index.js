@@ -1,17 +1,39 @@
 import * as React from "react";
-import { useState } from "react";
+import { Script } from "gatsby";
+
+import Accordian from "../components/Accordian";
+import Navbar from "../components/Navbar";
+import Input_Field from "../components/Input_Field";
+import Footer from "../components/Footer";
 
 const IndexPage = () => {
-  const [list, setList] = useState(["apple", "orange", "mango", "tomato"]);
   return (
-    <div class="h-screen bg-red-300">
-      <p class="text-4xl font-bold text-red-500 p-12">
-        This is a test to learn about gatsby
-      </p>
-    </div>
+    <>
+      <main class="mx-auto">
+        <Navbar></Navbar>
+        <div class="mt-24"></div>
+        <Input_Field></Input_Field>
+        <div class="mt-24"></div>
+        <Accordian></Accordian>
+        <div class="mt-24"></div>
+        <Footer></Footer>
+      </main>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js" />
+    </>
   );
 };
 
-export default IndexPage;
+export function Head() {
+  return (
+    <>
+      <title>Example page</title>
+      {/* Data block script */}
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+        rel="stylesheet"
+      />
+    </>
+  );
+}
 
-export const Head = () => <title>Home Page</title>;
+export default IndexPage;

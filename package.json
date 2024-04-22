@@ -16,6 +16,8 @@
   },
   "license": "0BSD",
   "dependencies": {
+    "flowbite": "^2.3.0",
+    "flowbite-react": "^0.9.0",
     "gatsby": "^5.13.3",
     "gatsby-plugin-preact": "^7.13.1",
     "preact": "^10.20.2",
