@@ -1,18 +1,36 @@
 import * as React from "react";
 import { useState } from "react";
 
-import { Script } from "gatsby";
+import { useEffect } from "react";
+
+import { useLocation } from "@reach/router";
+
 import Accordion from "../components/Accordion";
+import Navbar from "../components/Navbar";
+import Input_Field from "../components/Input_Field";
+
+import "preline/preline";
+import { HSStaticMethods } from "preline/preline";
+
+console.log(HSStaticMethods);
+
+window.HSStaticMethods = HSStaticMethods;
 
 const IndexPage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.HSStaticMethods.autoInit();
+  }, [location.pathname]);
+
   const [list, setList] = useState(["apple", "orange", "mango", "tomato"]);
   return (
-    <>
-      <div class="h-screen bg-red-300">
-        <Accordion></Accordion>
-      </div>
-      <Script src="../../node_modules/preline/dist/preline.js" />
-    </>
+    <div className="h-screen bg-slate-100">
+      <Navbar></Navbar>
+      <Input_Field />
+      <div className="mt-24"></div>
+      <Accordion></Accordion>
+    </div>
   );
 };
 
