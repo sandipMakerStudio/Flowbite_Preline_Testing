@@ -1,14 +1,18 @@
 import * as React from "react";
 import { useState } from "react";
 
+import { Script } from "gatsby";
+import Accordion from "../components/Accordion";
+
 const IndexPage = () => {
   const [list, setList] = useState(["apple", "orange", "mango", "tomato"]);
   return (
-    <div class="h-screen bg-red-300">
-      <p class="text-4xl font-bold text-red-500 p-12">
-        This is a test to learn about gatsby
-      </p>
-    </div>
+    <>
+      <div class="h-screen bg-red-300">
+        <Accordion></Accordion>
+      </div>
+      <Script src="../../node_modules/preline/dist/preline.js" />
+    </>
   );
 };
 
